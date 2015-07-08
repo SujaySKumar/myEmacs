@@ -7,7 +7,7 @@
 )
 
 ;; load theme
-(load-theme 'hipster t)
+;;(load-theme 'monokai t)
 
 ;; Transparent Emacs
 ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
@@ -47,13 +47,7 @@
 
 ;; line number config - http://stackoverflow.com/a/8470136/1044366
 (global-linum-mode t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- '(linum-format (quote dynamic)))
+(custom-set-variables '(linum-format 'dynamic))
 (defadvice linum-update-window (around linum-dynamic activate)
   (let* ((w (length (number-to-string
            (count-lines (point-min) (point-max)))))
@@ -75,9 +69,3 @@
 (global-set-key [f3] 'highlight-symbol-next)
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
